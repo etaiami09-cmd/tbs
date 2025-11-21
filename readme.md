@@ -1,9 +1,9 @@
 # Terminal Battle Sim
 
 A Python OOP demo where two characters fight each other in the terminal. Characters,
-weapons, and a colored health bar each get their own class. The health bar uses ANSI colors and 
+weapons, and a colored health bar each get their own class. The health bar uses ANSI colors and
 fills with `#` and `_` as HP changes. Weapons define damage, the hero can change them, and `main.py`
-runs a loop that clears the screen, shows both bars, applies attacks, and waits for you to 
+runs a loop that clears the screen, shows both bars, applies attacks, and waits for you to
 hit Enter for the next iteration.
 
 ## File Overview
@@ -28,3 +28,7 @@ hit Enter for the next iteration.
    ```
 4. Hit Enter to step through each round.
 5. Use `Ctrl+D` to exit.
+
+## Licenses
+
+This project is dual licensed under the **MIT License** and the **WTFPL License**. You may use the project under either license.
