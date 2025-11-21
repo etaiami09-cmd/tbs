@@ -1,6 +1,7 @@
 from character import Hero, Enemy
 from weapon import IRON_SWORD
 import os
+import sys
 
 hero = Hero("Hero", 100)
 hero.equip(IRON_SWORD)
@@ -10,17 +11,23 @@ hero.equip(IRON_SWORD)
 enemy = Enemy("Enemy", 100)
 
 while True:
-    # change 'clear' to 'cls' on windows systems
-    os.system("clear")
+    os.system("clear") # or 'cls' instead of 'clear' on Windows
 
-    # attack loop starts with hero
-    hero.attack(enemy)
-    # enemy immediately counter-attacks
-    enemy.attack(hero)
+    hero.attack(enemy) # attack loop starts with hero
+    
+    enemy.attack(hero) # enemy immediately counter-attacks
 
     # redraw updated healthbars after each exchange
     hero.healthbar.draw()
     enemy.healthbar.draw()
 
-    # pause to see the results before continuing
-    input()
+    print("\nPress Enter key to fight or Ctrl+D/C to exit.")
+
+    try:
+        input()
+    except EOFError:
+        print("\nSIGTERM received. Exiting.")
+        sys.exit(0)
+    except KeyboardInterrupt:
+        print("\nSIGINT received. Exiting.")
+        sys.exit(0)
