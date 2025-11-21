@@ -27,7 +27,7 @@ class HealthBar:
         remaining_bars = round(cur_val / max_val * self.length)
         lost_bars = self.length - remaining_bars
 
-        print(f"{self.entity.name}'s HEALTH: {cur_val}/{max_val}")
+        print(f"{self.entity.name}'s health: {cur_val}/{max_val}")
 
         color = self.color if self.colored else ""
         reset = self.colors["default"] if self.colored else ""
