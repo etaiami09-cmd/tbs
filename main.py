@@ -7,6 +7,9 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 hero = Hero("Hero", 100)
+enemy = Enemy("Enemy", 100)
+
+hero.equip(iron_sword)
 
 print("---- Choose weapon for hero ----\n1.Fists\n2.Iron Sword\n3.Short Bow")
 choice = int(input("> "))
@@ -20,11 +23,8 @@ elif choice == 2:
 elif choice == 3:
     hero.equip(short_bow)
 
-else :
-    print("Invalid choice, equipping iron sword.")
-    hero.equip(iron_sword)
-    
-enemy = Enemy("Enemy", 100)
+else:
+    print("Invalid choice, using default.")
 
 while True:
     clear_screen()
