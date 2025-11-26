@@ -1,5 +1,5 @@
 from character import Hero, Enemy
-from weapon import fists, iron_sword, short_bow
+from weapon import iron_sword, short_bow
 import os
 import sys
 
@@ -8,23 +8,21 @@ def clear_screen():
 
 hero = Hero("Hero", 100)
 
-print("-----choose your hero weapon----- \n 1.Fists \n 2.Iron Sword \n 3.Short Bow ")
-choice = input( )
+print("---- Choose weapon for hero ----\n1.Fists\n2.Iron Sword\n3.Short Bow")
+choice = int(input("> "))
 
-if choice == "2":
+if choice == 1:
+    hero.drop()
+
+elif choice == 2:
     hero.equip(iron_sword)
 
-elif choice == "1":
-    hero.equip(fists)
-
-elif choice == "3":
+elif choice == 3:
     hero.equip(short_bow)
 
 else :
-    print("invalid choice ,Equipping Iron sword")
+    print("Invalid choice, equipping iron sword.")
     hero.equip(iron_sword)
-
-
     
 enemy = Enemy("Enemy", 100)
 
